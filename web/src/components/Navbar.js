@@ -1,6 +1,7 @@
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/CocoScan.svg";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
@@ -43,10 +44,10 @@ const Navbar = () => {
                 <img src={Logo} alt="" />
             </div>
             <div className="navbar-links-container">
-                <a href="../pages/Home.js">Home</a>
-                <a href="">Predict</a>
-                <a href="">Information</a>
-                <a href="">Map</a>
+                <Link to="../pages/Home.js">Home</Link>
+                <Link to="/predict">Predict</Link>
+                <Link to="../pages/Info.js">Information</Link>
+                <Link to="/map">Map</Link>
             </div>
             <div className="navbar-menu-container">
                 <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
