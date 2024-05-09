@@ -1,2 +1,2 @@
 # PUSL3190-Computing-Project
-An AI-based &amp; Computer vision system to detect, monitor, and remediate coconut trees damaged by the Coconut Beetle
+An AI-Based and Computer Vision System to Identify, Monitor and Remediate Coconut Beetle Species Damaging Coconut Plants
