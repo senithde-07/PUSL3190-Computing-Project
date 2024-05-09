@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
@@ -20,9 +21,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL = tf.keras.models.load_model("../saved_models/training_models1")
+# Get the full file path
+model_file_path = os.path.join(
+    "D:\\NSBM\\21.1 Y3S1\\Final Project\\PUSL3190-Computing-Project\\coconut_beetle_detection\\saved_models",
+    "model.h5"
+)
 
-CLASS_NAMES = ["Black_beetle_damage", "Healthy_trees", "Healthy"]
+# Load the model
+MODEL = tf.keras.models.load_model(model_file_path)
+
+CLASS_NAMES = ["Black_beetle_damage", "Healthy_trees", "Red_beetle_damage"]
 
 @app.get("/ping")
 async def ping():
@@ -30,7 +38,9 @@ async def ping():
 
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
-    return image
+    # Resize the image to the expected input shape (256x256)
+    image = Image.fromarray(image).resize((256, 256))
+    return np.array(image)
 
 @app.post("/predict")
 async def predict(
