@@ -20,7 +20,7 @@
       <div class="w-full h-100">
         <img src="assets/img/CocoScan_logo.png" class="w-40 mb-10 mx-auto">
         <h1 class="font-bold text-5xl text-center">Login</h1>
-        <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Welcome! Please Enter Your Details</h1>
+        <h1 class="text-xl md:text-2xl font-bold text-center leading-tight mt-12">Welcome! Please Enter Your Details</h1>
   
         <form id="loginForm" class="mt-6">
           <div>

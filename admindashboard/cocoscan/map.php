@@ -31,9 +31,9 @@ if (!isset($_SESSION['user_id'])) {
 
     <div id="mySidenav" class="sidenav">
         <img src="assets/img/CocoScan_logo.png" class="w-40 mb-10 mx-auto">
-        <a href="index.php" class="icon-a font-bold"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
-        <a href="map.php" class="icon-a"><i class="fa fa-question"></i> &nbsp;&nbsp;Map</a>
-        <a href="issueslist.php" class="icon-a"><i class="fa fa-tasks"></i> &nbsp;&nbsp;Issues List</a>
+        <a href="index.php" class="icon-a "><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+        <a href="map.php" class="icon-a font-bold"><i class="fa fa-map"></i> &nbsp;&nbsp;Map</a>
+        <a href="issueslist.php" class="icon-a"><i class="fa fa-question"></i> &nbsp;&nbsp;Issues List</a>
         <a href="adduser.php" class="icon-a"><i class="fa fa-tasks"></i> &nbsp;&nbsp;Add User</a>
         <a href="userlist.php" class="icon-a"><i class="fa fa-tasks"></i> &nbsp;&nbsp;User List</a>
         <a href="api/logout.php" class="icon-a"><i class="fa fa-sign-out"></i> &nbsp;&nbsp;Logout</a>
@@ -43,11 +43,11 @@ if (!isset($_SESSION['user_id'])) {
         <div class="head">
             <div class="col-div-6 font-bold">
                 <span style="font-size:30px;cursor:pointer; color: rgb(0, 0, 0);" class="nav">&#9776; Locations Map</span>
-                <span style="font-size:30px;cursor:pointer; color: rgb(0, 0, 0);" class="nav2">&#9776; Map</span>
+                <span style="font-size:30px;cursor:pointer; color: rgb(0, 0, 0);" class="nav2">&#9776; Locations Map</span>
             </div>
             <div class="col-div-6">
                 <div class="profile">
-                    <img src="assets/img/CocoScan_logo.png" class="pro-img" />
+                    <img src="assets/img/user.png" class="pro-img" />
                     <p>Admin<span>COCO</span></p>
                 </div>
             </div>
@@ -85,17 +85,16 @@ if (!isset($_SESSION['user_id'])) {
         <div class="col-div-12">
             <div class="box-8">
                 <div class="content-box">
-                    <!-- Map container -->
                     <div id="map"></div>
                 </div>
             </div>
         </div>
         <div class="clearfix"></div>
         <div class="mt-4 ml-4">
-            <button id="zoomSriLanka" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="zoomSriLanka" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                 Zoom to Sri Lanka
             </button>
-            <button id="satelliteView" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="satelliteView" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                 Satellite View
             </button>
         </div>
@@ -106,16 +105,15 @@ if (!isset($_SESSION['user_id'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
   $(document).ready(function () {
-    // Initial map setup
+
     var map = L.map('map').setView([7.8731, 80.7718], 7);
 
-    // Add OpenStreetMap tile layer
     var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Satellite view layer
+
     var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
@@ -142,12 +140,12 @@ if (!isset($_SESSION['user_id'])) {
         });
     });
 
-    // Zoom to Sri Lanka button click event
+
     $('#zoomSriLanka').click(function () {
         map.setView([7.8731, 80.7718], 7);
     });
 
-    // Satellite view button click event
+    
     $('#satelliteView').click(function () {
         if (map.hasLayer(satelliteLayer)) {
             map.removeLayer(satelliteLayer);

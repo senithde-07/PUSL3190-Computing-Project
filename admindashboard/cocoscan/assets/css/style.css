@@ -34,7 +34,7 @@ body{
   padding: 15px 8px 15px 32px;
   text-decoration: none;
   font-size: 20px;
-  color: #818181;
+  color: #000000;
   display: block;
   transition: 0.3s;
 }
@@ -106,7 +106,7 @@ body{
 .box p span{
 	font-size: 20px;
 	font-weight: 400;
-	color: #818181;
+	color: #ffffff;
 }
 .box-icon{
 	font-size: 40px!important;
@@ -139,7 +139,7 @@ body{
 }
 .box-8, .box-4{
 	width: 95%;
-	background-color: #3ab54a;
+	background-color: #272c4a;
 	height: 530px;
 
 	

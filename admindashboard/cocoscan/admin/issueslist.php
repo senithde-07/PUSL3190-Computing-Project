@@ -17,27 +17,21 @@ if (!isset($_SESSION['user_id'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <!-- Link to your CSS files -->
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css">
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     .call-button {
       background-color: #3ab54b;
-      /* Green background color */
       color: #ffffff;
-      /* White text color */
       padding: 8px 12px;
       border-radius: 4px;
       text-decoration: none;
-      /* Remove underline */
     }
 
     .call-button:hover {
       background-color: #2d8f3e;
-      /* Darker green color on hover */
     }
   </style>
 </head>
@@ -46,9 +40,9 @@ if (!isset($_SESSION['user_id'])) {
 
   <div id="mySidenav" class="sidenav">
     <img src="../assets/img/CocoScan_logo.png" class="w-40 mb-10 mx-auto">
-    <a href="index.php" class="icon-a font-bold"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
-    <a href="map.php" class="icon-a"><i class="fa fa-question"></i> &nbsp;&nbsp;Map</a>
-    <a href="issueslist.php" class="icon-a"><i class="fa fa-tasks"></i> &nbsp;&nbsp;Issues List</a>
+    <a href="index.php" class="icon-a "><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+    <a href="map.php" class="icon-a"><i class="fa fa-map"></i> &nbsp;&nbsp;Map</a>
+    <a href="issueslist.php" class="icon-a font-bold"><i class="fa fa-question"></i> &nbsp;&nbsp;Issues List</a>
 
     <a href="../api/logout.php" class="icon-a"><i class="fa fa-sign-out"></i> &nbsp;&nbsp;Logout</a>
   </div>
@@ -63,7 +57,7 @@ if (!isset($_SESSION['user_id'])) {
 
       <div class="col-div-6">
         <div class="profile">
-          <img src="../assets/img/CocoScan_logo.png" class="pro-img" />
+          <img src="../assets/img/user.png" class="pro-img" />
           <p>Admin<span>COCO</span></p>
         </div>
       </div>
@@ -167,7 +161,6 @@ $('#exportCSV').click(function() {
 
 </script>
 
-  <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>

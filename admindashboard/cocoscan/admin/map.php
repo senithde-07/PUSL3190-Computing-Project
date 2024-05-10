@@ -31,9 +31,9 @@ if (!isset($_SESSION['user_id'])) {
 
     <div id="mySidenav" class="sidenav">
         <img src="../assets/img/CocoScan_logo.png" class="w-40 mb-10 mx-auto">
-        <a href="index.php" class="icon-a font-bold"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
-    <a href="map.php" class="icon-a"><i class="fa fa-question"></i> &nbsp;&nbsp;Map</a>
-    <a href="issueslist.php" class="icon-a"><i class="fa fa-tasks"></i> &nbsp;&nbsp;Issues List</a>
+        <a href="index.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+    <a href="map.php" class="icon-a font-bold"><i class="fa fa-map"></i> &nbsp;&nbsp;Map</a>
+    <a href="issueslist.php" class="icon-a"><i class="fa fa-question"></i> &nbsp;&nbsp;Issues List</a>
 
     <a href="../api/logout.php" class="icon-a"><i class="fa fa-sign-out"></i> &nbsp;&nbsp;Logout</a>
     </div>
@@ -42,11 +42,11 @@ if (!isset($_SESSION['user_id'])) {
         <div class="head">
             <div class="col-div-6 font-bold">
                 <span style="font-size:30px;cursor:pointer; color: rgb(0, 0, 0);" class="nav">&#9776; Locations Map</span>
-                <span style="font-size:30px;cursor:pointer; color: rgb(0, 0, 0);" class="nav2">&#9776; Map</span>
+                <span style="font-size:30px;cursor:pointer; color: rgb(0, 0, 0);" class="nav2">&#9776; Locations Map</span>
             </div>
             <div class="col-div-6">
                 <div class="profile">
-                    <img src="../assets/img/CocoScan_logo.png" class="pro-img" />
+                    <img src="../assets/img/user.png" class="pro-img" />
                     <p>Admin<span>COCO</span></p>
                 </div>
             </div>
@@ -91,10 +91,10 @@ if (!isset($_SESSION['user_id'])) {
         </div>
         <div class="clearfix"></div>
         <div class="mt-4 ml-4">
-            <button id="zoomSriLanka" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="zoomSriLanka" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                 Zoom to Sri Lanka
             </button>
-            <button id="satelliteView" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="satelliteView" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                 Satellite View
             </button>
         </div>
