@@ -1,14 +1,27 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import img from './images/map.png';
+import React from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { MapContainer, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css"; // Import Leaflet CSS for styling
 
 const Map = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+    >
       <Navbar />
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '50px', paddingBottom: '50px' }}>
-        <img src={img} alt="" style={{ maxWidth: '100%', height: 'auto', cursor: 'pointer' }} />
+      <div style={{ flex: 1 }}>
+        <MapContainer
+          style={{ width: "auto", height: "75vh", marginTop: "40px" }}
+          center={[6.9271, 79.8612]} // Colombo coordinates
+          zoom={9} // Default zoom level
+          scrollWheelZoom={false} // Disable scroll zoom
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+        </MapContainer>
       </div>
       <Footer />
     </div>

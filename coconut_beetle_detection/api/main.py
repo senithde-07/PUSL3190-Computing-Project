@@ -12,6 +12,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "http://localhost:3001",
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -23,7 +24,7 @@ app.add_middleware(
 
 # Get the full file path
 model_file_path = os.path.join(
-    "D:\\NSBM\\21.1 Y3S1\\Final Project\\PUSL3190-Computing-Project\\coconut_beetle_detection\\saved_models",
+    "E:\Final Project\PUSL3190-Computing-Project\coconut_beetle_detection\saved_models",
     "model.h5"
 )
 
