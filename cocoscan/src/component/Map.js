@@ -13,9 +13,9 @@ const Map = () => {
       <div style={{ flex: 1 }}>
         <MapContainer
           style={{ width: "auto", height: "75vh", marginTop: "40px" }}
-          center={[6.9271, 79.8612]} // Colombo coordinates
-          zoom={9} // Default zoom level
-          scrollWheelZoom={false} // Disable scroll zoom
+          center={[6.9271, 79.8612]}
+          zoom={9}
+          scrollWheelZoom={false}
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

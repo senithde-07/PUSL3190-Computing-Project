@@ -46,9 +46,7 @@ const Report = ({ predictionResult, imagePath }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log(formData);
-    // Show submit success message
     setSubmitSuccess(true);
   };
 

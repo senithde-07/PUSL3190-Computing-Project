@@ -21,47 +21,49 @@ const Home = () => {
       <Navbar />
       <Box
         display="flex"
-        flexDirection={{ xs: 'column-reverse', md: 'row' }}
-        justifyContent="space-between"
-        alignItems={{ xs: 'center', md: 'flex-start' }}
-        marginTop={{ xs: '50px', md: 0 }}
+        flexDirection={{ xs: "column-reverse", md: "row" }}
+        justifyContent="center" // Center horizontally
+        alignItems="center" // Center vertically
+        marginTop={{ xs: "50px", md: 0 }}
       >
         <Box flex="1">
           <Typography
             variant="h2"
             sx={{
-              marginLeft: { xs: '20px', md: '100px' },
-              marginTop: '100px',
-              fontWeight: 'bold',
+              marginLeft: { xs: "20px", md: "100px" },
+              marginTop: "100px",
+              fontWeight: "bold",
+              justifyContent: "center",
+              textAlign: "center", 
             }}
           >
-            A{' '}
-            <span style={{ color: 'green', textTransform: 'uppercase' }}>
+            A{" "}
+            <span style={{ color: "green", textTransform: "uppercase" }}>
               PREDICTIVE SYSTEM
-            </span>{' '}
+            </span>{" "}
             FOR DETECTING BEETLES THAT DAMAGE COCONUT TREES
           </Typography>
         </Box>
         <Box
           flex="1"
           sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            width: '100%',
-            marginRight: '50px',
-            marginTop: '30px'
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            marginRight: "50px",
+            marginTop: "30px",
           }}
         >
           <img
             src={img}
             alt="Logo"
             style={{
-              width: '100%',
-              height: 'auto',
-              maxWidth: '450px',
-              marginTop: { xs: '100px', md: 0 },
-              marginRight: { md: '50px' }
+              width: "100%",
+              height: "auto",
+              maxWidth: "450px",
+              marginTop: { xs: "100px", md: 0 },
+              marginRight: { md: "50px" },
             }}
           />
         </Box>
@@ -80,51 +82,50 @@ const Home = () => {
         </Typography>
         <Typography
           sx={{
-            marginTop: '30px',
-            paddingLeft: { xs: '20px', md: '250px' },
-            paddingRight: { xs: '20px', md: '250px' },
-            fontWeight: '600',
+            marginTop: "30px",
+            paddingLeft: { xs: "20px", md: "250px" },
+            paddingRight: { xs: "20px", md: "250px" },
+            fontWeight: "600",
           }}
           variant="body1"
         >
           Coco Scan is a cutting-edge web-based system that harnesses the power
           of machine learning using digital images to identify beetle species
           infesting Coconut Trees and how to control those beetles. Powered by
-          advanced computer vision algorithms and deep learning techniques,
-          Coco Scan will revolutionize weevil control management in coconut
+          advanced computer vision algorithms and deep learning techniques, Coco
+          Scan will revolutionize weevil control management in coconut
           plantations.
         </Typography>
         <Typography
           sx={{
-            marginTop: '20px',
-            paddingLeft: { xs: '20px', md: '250px' },
-            paddingRight: { xs: '20px', md: '250px' },
-            fontWeight: '600',
+            marginTop: "20px",
+            paddingLeft: { xs: "20px", md: "250px" },
+            paddingRight: { xs: "20px", md: "250px" },
+            fontWeight: "600",
           }}
           variant="body1"
         >
           To use Coco Scan, coconut growers upload an image of a coconut tree
           showing symptoms or anomalies with those symptoms. The system then
-          processes the image by extracting key visual features and patterns.
-          By analyzing these characteristics and comparing them with a large
+          processes the image by extracting key visual features and patterns. By
+          analyzing these characteristics and comparing them with a large
           database, it is possible to accurately identify which beetle species
           has damaged the coconut tree.
         </Typography>
         <Typography
           sx={{
-            marginTop: '20px',
-            paddingLeft: { xs: '20px', md: '250px' },
-            paddingRight: { xs: '20px', md: '250px' },
-            fontWeight: '600',
+            marginTop: "20px",
+            paddingLeft: { xs: "20px", md: "250px" },
+            paddingRight: { xs: "20px", md: "250px" },
+            fontWeight: "600",
           }}
           variant="body1"
         >
           Once the beetle that has damaged the coconut tree is detected, Cocoa
           Scan provides detailed information about the specific disease,
           including potential causes, recommended treatments, and preventative
-          measures. This enables coconut growers to take early action,
-          implement targeted interventions, and reduce disease spread and
-          impact.
+          measures. This enables coconut growers to take early action, implement
+          targeted interventions, and reduce disease spread and impact.
         </Typography>
       </Box>
       <Box
@@ -140,19 +141,19 @@ const Home = () => {
         </Typography>
         <Typography
           sx={{
-            marginTop: '30px',
-            paddingLeft: { xs: '20px', md: '250px' },
-            paddingRight: { xs: '20px', md: '250px' },
-            fontWeight: '600',
+            marginTop: "30px",
+            paddingLeft: { xs: "20px", md: "250px" },
+            paddingRight: { xs: "20px", md: "250px" },
+            fontWeight: "600",
           }}
           variant="body1"
         >
           Coco Scan is a web-based system that uses a machine learning model to
           detect beetles that damage the coconut tree and provide control
-          solutions for those beetles. Users upload images of a damaged
-          coconut tree, and they are analyzed using computer vision and deep
-          learning techniques. The model compares visual features extracted from
-          images with a comprehensive database of known beetle-damaged plants to
+          solutions for those beetles. Users upload images of a damaged coconut
+          tree, and they are analyzed using computer vision and deep learning
+          techniques. The model compares visual features extracted from images
+          with a comprehensive database of known beetle-damaged plants to
           identify specific beetle species.
         </Typography>
       </Box>
@@ -160,22 +161,22 @@ const Home = () => {
         display="flex"
         justifyContent="center"
         mt={4}
-        sx={{ marginBottom: '50px' }}
+        sx={{ marginBottom: "50px" }}
       >
         <Button
           variant="contained"
           color="primary"
           onClick={handlePredictClick}
           style={{
-            marginRight: '20px',
-            backgroundColor: 'white',
-            color: 'green',
-            border: '1px solid green',
-            padding: '10px 20px',
-            '&:hover': {
-              backgroundColor: 'green',
-              color: 'white',
-              border: '1px solid green',
+            marginRight: "20px",
+            backgroundColor: "white",
+            color: "green",
+            border: "1px solid green",
+            padding: "10px 20px",
+            "&:hover": {
+              backgroundColor: "green",
+              color: "white",
+              border: "1px solid green",
             },
           }}
         >
@@ -186,15 +187,15 @@ const Home = () => {
           onClick={handleInformationClick}
           color="primary"
           style={{
-            marginLeft: '10px',
-            backgroundColor: 'white',
-            color: 'green',
-            border: '1px solid green',
-            padding: '10px 20px 10px 20px',
-            '&:hover': {
-              backgroundColor: 'green',
-              color: 'white',
-              border: '1px solid green',
+            marginLeft: "10px",
+            backgroundColor: "white",
+            color: "green",
+            border: "1px solid green",
+            padding: "10px 20px 10px 20px",
+            "&:hover": {
+              backgroundColor: "green",
+              color: "white",
+              border: "1px solid green",
             },
           }}
         >

@@ -69,7 +69,7 @@ const Navbar = () => {
         anchor="right"
         open={isMenuOpen}
         onClose={handleMenuClose}
-        sx={{ '& .MuiDrawer-paper': { width: '250px' } }} // Adjust width of the drawer if needed
+        sx={{ '& .MuiDrawer-paper': { width: '250px' } }} 
       >
         <List>
           <ListItem button onClick={() => { handleMenuClose(); handleHomeClick(); }}>

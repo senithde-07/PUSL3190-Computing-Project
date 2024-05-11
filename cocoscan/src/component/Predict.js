@@ -26,8 +26,6 @@ const Predict = () => {
     setUploadedImage(imageUrl);
     setExifData(exifData);
     setImagePath(file.name); // Store the file path
-
-    // Clear previous prediction result when uploading a new image
     setPredictionResult(null);
   };
 
