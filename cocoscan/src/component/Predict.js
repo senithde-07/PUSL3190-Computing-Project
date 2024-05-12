@@ -12,7 +12,7 @@ const Predict = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [predictionResult, setPredictionResult] = useState(null);
   const [exifData, setExifData] = useState(null);
-  const [imagePath, setImagePath] = useState(null); // State to store image path
+  const [imagePath, setImagePath] = useState(null); 
 
   const handleBoxClick = () => {
     fileInputRef.current.click();
@@ -25,7 +25,7 @@ const Predict = () => {
     const imageUrl = URL.createObjectURL(file);
     setUploadedImage(imageUrl);
     setExifData(exifData);
-    setImagePath(file.name); // Store the file path
+    setImagePath(file.name); 
     setPredictionResult(null);
   };
 

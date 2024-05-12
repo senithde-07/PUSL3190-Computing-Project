@@ -17,12 +17,15 @@ const Report = ({ predictionResult, imagePath }) => {
   const [formData, setFormData] = useState({
     name: "",
     address: "",
-    phoneNumber: "",
+    mobile: "",
     district: "",
+    catgeory:"",
     note: "",
-    beetleDamage: predictionResult ? predictionResult.class : "",
+    
     confidenceLevel: predictionResult ? predictionResult.confidence : "",
     uploadedImagePath: imagePath || "",
+    lan: "",
+    lon: "",
   });
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -36,6 +39,23 @@ const Report = ({ predictionResult, imagePath }) => {
     }
   }, [predictionResult]);
 
+  useEffect(() => {
+    
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          lan: latitude.toFixed(6),
+          lon: longitude.toFixed(6),
+        }));
+      },
+      (error) => {
+        console.error("Error getting user's location:", error);
+      }
+    );
+  }, []); 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -43,12 +63,33 @@ const Report = ({ predictionResult, imagePath }) => {
       [name]: value,
     });
   };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log(formData);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    setSubmitSuccess(true);
-  };
+  
+  fetch("http://localhost:3001/api/submitData/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => {
+      if (response.ok) {
+        setSubmitSuccess(true);
+        console.log("Form data submitted successfully");
+      } else {
+        console.error("Failed to submit form data");
+        
+      }
+    })
+    .catch((error) => {
+      console.error("Error submitting form data:", error);
+      
+    });
+};
+
 
   const handleCloseSnackbar = () => {
     setSubmitSuccess(false);
@@ -63,7 +104,7 @@ const Report = ({ predictionResult, imagePath }) => {
         alignItems="center"
         minHeight="80vh"
         flexDirection="column"
-        padding="40px" 
+        padding="40px"
       >
         <Typography variant="h4" gutterBottom>
           Report Form
@@ -90,8 +131,8 @@ const Report = ({ predictionResult, imagePath }) => {
             />
             <TextField
               label="Phone Number"
-              name="phoneNumber"
-              value={formData.phoneNumber}
+              name="mobile"
+              value={formData.mobile}
               onChange={handleChange}
               margin="normal"
               variant="outlined"
@@ -102,14 +143,12 @@ const Report = ({ predictionResult, imagePath }) => {
               <InputLabel>Beetle Damage</InputLabel>
               <Select
                 label="Beetle Damage"
-                name="beetleDamage"
-                value={formData.beetleDamage}
+                name="catgeory"
+                value={formData.catgeory}
                 onChange={handleChange}
               >
-                <MenuItem value="Black beetle Damage">
-                  Black beetle Damage
-                </MenuItem>
-                <MenuItem value="Red Beetle damage">Red Beetle damage</MenuItem>
+                <MenuItem value="1">Red Beetle damage</MenuItem>
+                <MenuItem value="2">Black beetle Damage</MenuItem>
               </Select>
             </FormControl>
             <FormControl fullWidth variant="outlined" margin="normal">
@@ -120,10 +159,56 @@ const Report = ({ predictionResult, imagePath }) => {
                 value={formData.district}
                 onChange={handleChange}
               >
-                <MenuItem value="District 1">District 1</MenuItem>
-                <MenuItem value="District 2">District 2</MenuItem>
+                <MenuItem value="1">Ampara</MenuItem>
+                <MenuItem value="2">Anuradhapura</MenuItem>
+                <MenuItem value="3">Badulla</MenuItem>
+                <MenuItem value="4">Batticaloa</MenuItem>
+                <MenuItem value="5">Colombo</MenuItem>
+                <MenuItem value="6">Galle</MenuItem>
+                <MenuItem value="7">Gampaha</MenuItem>
+                <MenuItem value="8">Hambantota</MenuItem>
+                <MenuItem value="9">Kalutara</MenuItem>
+                <MenuItem value="10">Jaffna</MenuItem>
+                <MenuItem value="11">Kalutara</MenuItem>
+                <MenuItem value="12">Kandy</MenuItem>
+                <MenuItem value="13">Kegalle</MenuItem>
+                <MenuItem value="14">Kilinochchi</MenuItem>
+                <MenuItem value="15">Kurunegala</MenuItem>
+                <MenuItem value="16">Mannar</MenuItem>
+                <MenuItem value="17">Matale</MenuItem>
+                <MenuItem value="18">Matara</MenuItem>
+                <MenuItem value="19">Monaragala</MenuItem>
+                <MenuItem value="20">Mullaitivu</MenuItem>
+                <MenuItem value="21">Nuwara Eliya</MenuItem>
+                <MenuItem value="22">Polonnaruwa</MenuItem>
+                <MenuItem value="23">Puttalam</MenuItem>
+                <MenuItem value="24">Ratnapura</MenuItem>
+                <MenuItem value="25">Trincomalee</MenuItem>
+                <MenuItem value="26">Vavuniya</MenuItem>
               </Select>
             </FormControl>
+
+            <TextField
+              label="Latitude"
+              name="lat"
+              value={formData.lan}
+              onChange={handleChange}
+              margin="normal"
+              variant="outlined"
+              fullWidth
+              disabled 
+            />
+            <TextField
+              label="Longitude"
+              name="lon"
+              value={formData.lon}
+              onChange={handleChange}
+              margin="normal"
+              variant="outlined"
+              fullWidth
+              disabled 
+            />
+
             <TextField
               label="Note"
               name="note"
@@ -143,6 +228,7 @@ const Report = ({ predictionResult, imagePath }) => {
             >
               Submit
             </Button>
+            
           </Box>
         </form>
       </Box>

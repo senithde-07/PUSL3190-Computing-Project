@@ -1,20 +1,49 @@
-import React from 'react';
-import Navbar from './Navbar';
-import { Typography, Box, Button } from '@mui/material';
-import img from './images/image2.png';
-import Footer from './Footer';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
+import { Typography, Box, Button } from "@mui/material";
+import img from "./images/image2.png";
+import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [userIP, setUserIP] = useState("");
 
   const handlePredictClick = () => {
-    navigate('/predict');
+    navigate("/predict");
   };
 
   const handleInformationClick = () => {
-    navigate('/information');
+    navigate("/information");
   };
+
+  useEffect(() => {
+    const fetchUserIP = async () => {
+      try {
+        // Fetch the user's IP address from an IP API
+        const response = await fetch("https://api64.ipify.org?format=json");
+        const data = await response.json();
+        const { ip } = data;
+        setUserIP(ip);
+
+        // Send the user's IP address to your API
+        await fetch("http://localhost:3001/api/ip/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ip }),
+        });
+
+        console.log("User IP address sent successfully:", ip);
+      } catch (error) {
+        console.error("Error fetching or sending IP address:", error);
+      }
+    };
+
+    // Call the function to fetch and send the IP address when the component mounts
+    fetchUserIP();
+  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
   return (
     <div>
@@ -34,7 +63,7 @@ const Home = () => {
               marginTop: "100px",
               fontWeight: "bold",
               justifyContent: "center",
-              textAlign: "center", 
+              textAlign: "center",
             }}
           >
             A{" "}
