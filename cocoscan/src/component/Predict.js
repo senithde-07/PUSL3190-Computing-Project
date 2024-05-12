@@ -82,7 +82,7 @@ const Predict = () => {
               style={{ width: "150px", height: "120px", cursor: "pointer" }}
             />
           </Box>
-          <Box ml={1} onClick={handleBoxClick}>
+          <Box>
             <img
               src={img2}
               alt=""
