@@ -100,7 +100,6 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 
-    <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>

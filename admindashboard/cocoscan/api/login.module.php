@@ -14,7 +14,7 @@ if(isset($data['email']) && isset($data['password'])) {
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         
-        // Verify password
+        
         if (password_verify($password, $user['password'])) {
             $admin_role = $user['admin_role'];
         

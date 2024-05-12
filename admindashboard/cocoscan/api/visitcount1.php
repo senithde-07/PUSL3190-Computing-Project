@@ -7,7 +7,7 @@ $response = array();
 
 $currentDate = date('Y-m-d');
 
-$sql = "SELECT COUNT(*) AS daily_count FROM visits WHERE DATE(date) = '$currentDate'";
+$sql = "SELECT COUNT(DISTINCT ip) AS daily_count FROM visits WHERE DATE(date) = '$currentDate'";
 
 $result = $conn->query($sql);
 

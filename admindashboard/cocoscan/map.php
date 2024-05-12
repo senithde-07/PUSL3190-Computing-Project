@@ -100,7 +100,6 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 
-    <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -118,7 +117,7 @@ if (!isset($_SESSION['user_id'])) {
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
-    // Fetch data from API and add markers to the map
+    
     $.getJSON('api/map.module.php', function (data) {
         data.locations.forEach(function (location) {
             var marker = L.marker([location.lan, location.lon]).addTo(map);

@@ -80,15 +80,32 @@ if (!isset($_SESSION['user_id'])) {
                             <label for="district" class="block text-gray-700 text-sm font-bold mb-2" style="color:white">District:</label>
                             <select id="district" name="district" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                 <option value="0">Select</option>    
-                                <option value="1">Colombo</option>
-                                <option value="2">Gampaha</option>
-                                <option value="3">Kalutara</option>
-                                <option value="4">Kandy</option>
-                                <option value="5">Matale</option>
-                                <option value="6">Nuwara Eliya</option>
-                                <option value="7">Galle</option>
-                                <option value="8">Matara</option>
-                                <option value="9">Hambantota</option>
+                                <option value="1">Ampara</option>
+                                <option value="2">Anuradhapura</option>
+                                <option value="3">Badulla</option>
+                                <option value="4">Batticaloa</option>
+                                <option value="5">Colombo</option>
+                                <option value="6">Galle</option>
+                                <option value="7">Gampaha</option>
+                                <option value="8">Hambantota</option>
+                                <option value="9">Kalutara</option>
+                                <option value="10">Jaffna</option>
+                                <option value="11">Kalutara</option>
+                                <option value="12">Kandy</option>
+                                <option value="13">Kegalle</option>
+                                <option value="14">Kilinochchi</option>
+                                <option value="15">Kurunegala</option>
+                                <option value="16">Mannar</option>
+                                <option value="17">Matale</option>
+                                <option value="18">Matara</option>
+                                <option value="19">Monaragala</option>
+                                <option value="20">Mullaitivu</option>
+                                <option value="21">Nuwara Eliya</option>
+                                <option value="22">Polonnaruwa</option>
+                                <option value="23">Puttalam</option>
+                                <option value="24">Ratnapura</option>
+                                <option value="25">Trincomalee</option>
+                                <option value="26">Vavuniya</option>
                             </select>
                         </div>
 

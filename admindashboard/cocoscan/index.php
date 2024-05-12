@@ -25,7 +25,6 @@ if (!isset($_SESSION['user_id'])) {
       padding: 8px 12px;
       border-radius: 4px;
       text-decoration: none;
-      /* Remove underline */
     }
 
     .call-button:hover {
